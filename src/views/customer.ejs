@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS-Project</title>
+    <link rel="stylesheet" href="./css/navbar.css">
+    <link rel="stylesheet" href="/css/customer.css">
+</head>
+<body>
+    <div class="h_navbar">
+        <li class="li_item"><a class="nav_link" href="/">Home</a></li>
+        <li class="li_item"><a class="nav_link" href="/customer">Customer</a></li>
+        <li class="li_item"><a class="nav_link" href="/admin">Admin</a></li>
+    </div>
+    <div class="book_tickect_container">
+                <!-- search functionaltiy -->
+                <div class="show_tourpackage">
+                    <!-- Search Form -->
+                    <div class="search_filter">
+                        <form action="/admin" method="GET" class="search_filter_form">
+                            <input type="text" name="destination" placeholder="Search by Destination" value="<%= filters.destination || '' %>" />
+        
+                            <!-- Filter by Price Range -->
+                            <input type="number" name="minPrice" placeholder="Min Price" value="<%= filters.minPrice || '' %>" />
+                            <input type="number" name="maxPrice" placeholder="Max Price" value="<%= filters.maxPrice || '' %>" />
+                    
+                            <!-- Filter by Duration -->
+                            <input type="number" name="minDuration" placeholder="Min Duration" value="<%= filters.minDuration || '' %>" />
+                            <input type="number" name="maxDuration" placeholder="Max Duration" value="<%= filters.maxDuration || '' %>" />
+                            <button type="submit">Search</button>
+                        </form>
+                    </div>
+                    <!-- Package List -->
+                    <div class="search_list">
+                        <table class="search_table">
+                            <thead class="list_head">
+                                <tr class="list_head_row">
+                                    <th>Package Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Duration</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Destination</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="list_body" id="package-list">
+                                <% packages.forEach(package => { %>
+                                    <tr class="list_body_row">
+                                        <td><%= package.package_name %></td>
+                                        <td><%= package.description %></td>
+                                        <td><%= package.price %></td>
+                                        <td><%= package.duration %></td>
+                                        <td><%= package.start_date %></td>
+                                        <td><%= package.end_date %></td>
+                                        <td><%= package.destination %></td>
+                                        <td>
+                                            <div class="bookbtn">
+                                                <!-- Book Link -->
+                                                <a href="/customer/book_tourpackage/<%= package.package_id %>" class="Bookbtn">Book</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                        <% if (packages.length === 0) { %>
+                            <p>No packages found.</p>
+                        <% } %>
+                    </div>
+                 </div>
+    </div>
+
+    <script>
+        // Listen for changes in the input fields to filter the results
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', filterPackages);
+        });
+    
+        function filterPackages() {
+            const destination = document.querySelector('input[name="destination"]').value;
+            const minPrice = document.querySelector('input[name="minPrice"]').value;
+            const maxPrice = document.querySelector('input[name="maxPrice"]').value;
+            const minDuration = document.querySelector('input[name="minDuration"]').value;
+            const maxDuration = document.querySelector('input[name="maxDuration"]').value;
+    
+            // Send an AJAX request to the server to get filtered packages
+            fetch(`/admin/view_tourpackages?destination=${destination}&minPrice=${minPrice}&maxPrice=${maxPrice}&minDuration=${minDuration}&maxDuration=${maxDuration}`)
+            .then(response => response.json())
+            .then(data => {
+                const packageList = document.getElementById('package-list');
+                packageList.innerHTML = ''; // Clear current package list
+    
+                // Iterate through the packages and append them to the table
+                data.packages.forEach(package => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${package.package_name}</td>
+                        <td>${package.description}</td>
+                        <td>${package.price}</td>
+                        <td>${package.duration}</td>
+                        <td>${package.start_date}</td>
+                        <td>${package.end_date}</td>
+                        <td>${package.destination}</td>
+                        <td>
+                            <a href="/admin/update_tourpackage/${package.package_id}">Update</a>
+                            <form action="/admin/delete_tourpackage/${package.package_id}" method="POST" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    `;
+                    packageList.appendChild(row);
+                });
+    
+                if (data.packages.length === 0) {
+                    const noData = document.createElement('p');
+                    noData.textContent = 'No packages found.';
+                    packageList.appendChild(noData);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

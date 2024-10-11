@@ -1,0 +1,21 @@
+.show_tourpackage{
+    border: 1px solid black;
+    margin: 1rem;
+}
+.show_tourpackage > *{
+    margin: 1rem;
+}
+
+.search_list{
+    border: 1px solid black;
+    padding: 0.4rem;
+}
+.search_table{
+    border-collapse: collapse;
+}
+.list_head{
+    background-color: rgba(172, 233, 235, 0.597);
+}
+th, td{
+    padding: 0.8rem;
+}

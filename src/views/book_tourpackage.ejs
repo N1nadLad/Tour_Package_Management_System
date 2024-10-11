@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS-Project</title>
+    <link rel="stylesheet" href="/css/bookticketform.css">
+</head>
+<body>
+    <div class="book_form_container">
+        <div class="btitle_div">
+            <h1 class="book_title">Book Tour Package</h1>
+        </div>
+        <div class="bform_div">
+            <form action="/customer/book_tourpackage/<%= package.package_id %>" method="POST" class="book_form">
+                <div class="bfsub_div">
+                    <div class="section">
+                        <label for="first_name">First Name</label>
+                        <input type="text" name="first_name" value="" required />
+                    </div>
+                    <div class="section">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" name="last_name" value="" required />
+                    </div>
+                </div>
+                <div class="bfsub_div">
+                    <div class="section">
+                        <label for="phone_number">Phone</label>
+                        <input type="number" name="phone_number" value="" required />
+                    </div>
+                    <div class="section">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" value="" required />
+                    </div>
+                </div>
+                <div class="bfsub_div">
+                    <div class="section">
+                        <label for="address">Address</label>
+                        <input type="text" name="address" value="" required/>
+                    </div>
+                </div>
+                <div class="bfsub_div">
+                    <div class="section">
+                        <button type="submit">Confirm</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

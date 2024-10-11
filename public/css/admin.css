@@ -1,0 +1,64 @@
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.add_tourpackage{
+    border: 1px solid black;
+    margin: 1rem;
+}
+.add_tourpackage_form{
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem;
+}
+.sub_divison{
+    padding: 0.6rem;
+}
+.sub_divison > *{
+    margin-left: 1rem;
+    padding: 0.5rem 1.4rem;
+}
+.sub_divison > button{
+    background-color: rgba(171, 243, 171, 0.903);
+}
+
+.show_tourpackage{
+    border: 1px solid black;
+    margin: 1rem;
+}
+.show_tourpackage > *{
+    margin: 1rem;
+}
+
+.search_list{
+    border: 1px solid black;
+    padding: 0.4rem;
+}
+.search_table{
+    border-collapse: collapse;
+}
+.list_head{
+    background-color: rgba(172, 233, 235, 0.597);
+}
+th, td{
+    padding: 0.8rem;
+}
+.udbtn{
+    display: flex;
+    justify-content: space-between;
+}
+.udbtn > *{
+    margin: 0.2rem;
+}
+.updatebtn{
+    padding: 0.1rem;
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: rgba(121, 180, 244, 0.781);
+}
+.deletebtn{
+    padding: 0.2rem 0.8rem;
+    border: 1px solid black;
+    background-color: rgba(251, 87, 87, 0.912);
+}

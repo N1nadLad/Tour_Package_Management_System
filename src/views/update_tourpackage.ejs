@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS-Project</title>
+    <link rel="stylesheet" href="/css/updateform.css">
+</head>
+<body>
+    <div class="update_form_container">
+        <div class="utitle_div">
+            <h1 class="update_title">Update Tour Package</h1>
+        </div>
+        <div class="uform_div">
+            <form action="/admin/update_tourpackage/<%= package.package_id %>" method="POST" class="update_form">
+                <div class="ufsub_div">
+                    <div class="section">
+                        <label for="package_name">Package Name</label>
+                        <input type="text" name="package_name" value="<%= package.package_name %>" required />
+                    </div>
+                    <div class="section">
+                        <label for="destination">Destination</label>
+                        <input type="text" name="destination" value="<%= package.destination %>" required />
+                    </div>
+                </div>
+                <div class="ufsub_div">
+                    <div class="section">
+                        <label for="price">Price</label>
+                        <input type="number" name="price" value="<%= package.price %>" required />
+                    </div>
+                    <div class="section">
+                        <label for="duration">Duration</label>
+                        <input type="number" name="duration" value="<%= package.duration %>" required />
+                    </div>
+                </div>
+                <div class="ufsub_div">
+                    <div class="section">
+                        <label for="start_date">Start-Date</label>
+                        <input type="date" name="start_date" value="<%= package.start_date %>" required />
+                    </div>
+                    <div class="section">
+                        <label for="end_date">End-Date</label>
+                        <input type="date" name="end_date" value="<%= package.end_date %>" required />
+                    </div>
+                </div>
+                <div class="ufsub_div">
+                    <div class="section">
+                        <label for="description">Description</label>
+                        <textarea name="description" required><%= package.description %></textarea>
+                    </div>
+                </div>
+                <div class="ufsub_div">
+                    <div class="section">
+                        <button type="submit">Update Package</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
