@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const mysql = require('mysql2/promise');
@@ -5,10 +6,10 @@ const app = express();
 
 // Database Pool Configuration
 const pool = mysql.createPool({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'tourpackagedb',
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
@@ -20,7 +21,7 @@ async function startServer() {
         await pool.getConnection();
         console.log('Database connected successfully');
 
-        app.listen(3000, () => {
+        app.listen(process.env.PORT || 3000, () => {
             console.log('Server started on port 3000');
         });
     } catch (error) {
