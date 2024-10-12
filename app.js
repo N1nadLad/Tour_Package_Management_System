@@ -211,7 +211,7 @@ app.get('/customer', async (req, res) => {
         if (connection) connection.release(); // Release the connection back to the pool
     }
 });
-
+//customer book tour package
 app.get('/customer/book_tourpackage/:id',async (req,res)=>{
     const packageId = req.params.id;
     const query = 'SELECT * FROM TourPackages WHERE package_id = ?';

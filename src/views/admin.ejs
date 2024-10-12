@@ -19,28 +19,32 @@
 
         <!-- Adding Package -->
         <div class="add_tourpackage">
-            <form class="add_tourpackage_form" action="/admin/add_tourpackage" method="post">
-                <div class="sub_divison">
-                    <input type="text" name="package_name" placeholder="Package Name" required />
-                    <input type="text" name="destination" placeholder="Destination" required />
-                    <input type="number" name="price" placeholder="Price" required />
-                </div>
-                <div class="sub_divison">
-                    <input type="number" name="duration" placeholder="Duration (Days)" required />
-                    <input type="date" name="start_date" placeholder="Start Date" required />
-                    <input type="date" name="end_date" placeholder="End Date" required />                    
-                </div>
-                <div class="sub_divison">
-                    <textarea type="text" name="description" placeholder="Description"></textarea>
-                </div>
-                <div class="sub_divison">
-                    <button type="submit">Add Package</button> 
-                </div>
-              </form>
+            <div class="atpform_title">Add Tour Package</div>
+            <div class="atpform_container">
+                <form class="add_tourpackage_form" action="/admin/add_tourpackage" method="post">
+                    <div class="sub_divison">
+                        <input type="text" name="package_name" placeholder="Package Name" required />
+                        <input type="text" name="destination" placeholder="Destination" required />
+                        <input type="number" name="price" placeholder="Price" required />
+                    </div>
+                    <div class="sub_divison">
+                        <input type="number" name="duration" placeholder="Duration (Days)" required />
+                        <input type="date" name="start_date" placeholder="Start Date" required />
+                        <input type="date" name="end_date" placeholder="End Date" required />                    
+                    </div>
+                    <div class="sub_divison">
+                        <textarea type="text" name="description" placeholder="Description"></textarea>
+                    </div>
+                    <div class="sub_divison">
+                        <button type="submit">Add Package</button> 
+                    </div>
+                  </form>
+            </div>
         </div>
 
         <!-- search functionaltiy -->
          <div class="show_tourpackage">
+            <div class="sftitle">Manage Tour Packages</div>
             <!-- Search Form -->
             <div class="search_filter">
                 <form action="/admin" method="GET" class="search_filter_form">

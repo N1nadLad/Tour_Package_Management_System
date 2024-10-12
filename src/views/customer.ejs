@@ -14,10 +14,11 @@
         <li class="li_item"><a class="nav_link" href="/admin">Admin</a></li>
     </div>
     <div class="book_tickect_container">
+        <div class="stptitle">Book Tour Package</div>
+            <div class="show_tourpackage">
                 <!-- search functionaltiy -->
-                <div class="show_tourpackage">
-                    <!-- Search Form -->
-                    <div class="search_filter">
+                <!-- Search Form -->
+                <div class="search_filter">
                         <form action="/admin" method="GET" class="search_filter_form">
                             <input type="text" name="destination" placeholder="Search by Destination" value="<%= filters.destination || '' %>" />
         
@@ -57,9 +58,9 @@
                                         <td><%= package.end_date %></td>
                                         <td><%= package.destination %></td>
                                         <td>
-                                            <div class="bookbtn">
+                                            <div class="bookbtndiv">
                                                 <!-- Book Link -->
-                                                <a href="/customer/book_tourpackage/<%= package.package_id %>" class="Bookbtn">Book</a>
+                                                <a href="/customer/book_tourpackage/<%= package.package_id %>" class="bookbtn">Book</a>
                                             </div>
                                         </td>
                                     </tr>
