@@ -81,3 +81,15 @@ th, td{
 .search_filter_form > button{
     background-color: rgba(110, 89, 227, 0.712);
 }
+.search_filter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.customer_link{
+    text-decoration: none;
+    border: 1px solid black;
+    background-color: rgba(232, 232, 166, 0.852);
+    color: black;
+    padding: 0.4rem 1rem;
+}

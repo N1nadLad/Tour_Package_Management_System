@@ -234,6 +234,8 @@ app.get('/customer/book_tourpackage/:id',async (req,res)=>{
 })
 
 app.post('/customer/book_tourpackage/:id', async (req, res) => {
+    const package_id = req.params.id;
+    const booking_date = new Date().toISOString().split('T')[0];
     const { first_name, last_name, phone_number, email, address } = req.body;
 
     const insert_query = `
@@ -246,10 +248,57 @@ app.post('/customer/book_tourpackage/:id', async (req, res) => {
     try {
         connection = await pool.getConnection();
         await connection.query(insert_query, values);
+
+        // Fetch customer_id from Customers table based on email
+        const [customerResult] = await connection.query('SELECT customer_id FROM Customers WHERE email = ?', [email]);
+        if (customerResult.length === 0) {
+        return res.status(404).send('Customer not found');
+        }
+        const customer_id = customerResult[0].customer_id;
+
+        // Insert the booking into Bookings table
+        const insertQuery = `INSERT INTO Bookings (customer_id, package_id, booking_date)
+        VALUES (?, ?, ?)`;
+        await connection.query(insertQuery, [customer_id, package_id, booking_date]);
+
         res.render('booking_completed');
     } catch (err) {
         console.error('Error executing query:', err);
         res.status(500).send('Error booking customer');
+    } finally {
+        if (connection) connection.release();
+    }
+
+});
+//customer detail for admin
+app.get('/admin/customer_booking', async (req, res) => {
+    let connection;
+    try {
+        connection = await pool.getConnection();
+        
+        const query = `
+        SELECT 
+            b.booking_id,
+            c.first_name,
+            c.last_name,
+            c.email,
+            tp.package_name,
+            b.booking_date
+        FROM 
+            bookings b
+        JOIN 
+            customers c ON b.customer_id = c.customer_id
+        JOIN 
+            tourpackages tp ON b.package_id = tp.package_id
+        ORDER BY 
+            b.booking_date DESC;
+    `;
+    
+        const [results] = await connection.query(query);
+        res.render('customer_details', { bookings: results });  // Render the bookings page with the data
+    } catch (err) {
+        console.error('Error fetching bookings:', err);
+        res.status(500).send('Error fetching bookings');
     } finally {
         if (connection) connection.release();
     }

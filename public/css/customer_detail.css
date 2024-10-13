@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Styling the page header */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-family: "Poppins", system-ui;
+}
+
+/* Container for the customer list */
+.customer_list {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: "Poppins", system-ui;
+}
+
+/* Table Styling */
+.customer_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.customer_table thead {
+    background-color: #8ABFA3;
+    color: white;
+}
+
+.customer_table th, .customer_table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.customer_table th {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.customer_table td {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Stripe effect for rows */
+.customer_table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+.customer_table tbody tr:hover {
+    background-color: #f1f1f1;
+}

@@ -47,18 +47,21 @@
             <div class="sftitle">Manage Tour Packages</div>
             <!-- Search Form -->
             <div class="search_filter">
-                <form action="/admin" method="GET" class="search_filter_form">
-                    <input type="text" name="destination" placeholder="Search by Destination" value="<%= filters.destination || '' %>" />
-
-                    <!-- Filter by Price Range -->
-                    <input type="number" name="minPrice" placeholder="Min Price" value="<%= filters.minPrice || '' %>" />
-                    <input type="number" name="maxPrice" placeholder="Max Price" value="<%= filters.maxPrice || '' %>" />
-            
-                    <!-- Filter by Duration -->
-                    <input type="number" name="minDuration" placeholder="Min Duration" value="<%= filters.minDuration || '' %>" />
-                    <input type="number" name="maxDuration" placeholder="Max Duration" value="<%= filters.maxDuration || '' %>" />
-                    <button type="submit">Search</button>
-                </form>
+                <div>
+                    <form action="/admin" method="GET" class="search_filter_form">
+                        <input type="text" name="destination" placeholder="Search by Destination" value="<%= filters.destination || '' %>" />
+    
+                        <!-- Filter by Price Range -->
+                        <input type="number" name="minPrice" placeholder="Min Price" value="<%= filters.minPrice || '' %>" />
+                        <input type="number" name="maxPrice" placeholder="Max Price" value="<%= filters.maxPrice || '' %>" />
+                
+                        <!-- Filter by Duration -->
+                        <input type="number" name="minDuration" placeholder="Min Duration" value="<%= filters.minDuration || '' %>" />
+                        <input type="number" name="maxDuration" placeholder="Max Duration" value="<%= filters.maxDuration || '' %>" />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <div class="customer_link_div"><a href="/admin/customer_booking" class="customer_link">Customer Details</a></div>
             </div>
             <!-- Package List -->
             <div class="search_list">

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBMS-Project</title>
+    <link rel="stylesheet" href="/css/customer_detail.css">
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookings</title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+    <h1>Bookings List</h1>
+    <div class="customer_list">
+        <table class="customer_table">
+            <thead class="c_head">
+                <tr class="c_head_row"> 
+                    <th>Booking ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Package Name</th>
+                    <th>Booking Date</th>
+                </tr>
+            </thead>
+            <tbody class="c_body" id="package-list">
+                <% bookings.forEach(function(booking) { %>
+                    <tr class="c_body_row">
+                        <td><%= booking.booking_id %></td>
+                        <td><%= booking.first_name %></td>
+                        <td><%= booking.last_name %></td>
+                        <td><%= booking.email %></td>
+                        <td><%= booking.package_name %></td>
+                        <td><%= booking.booking_date.toDateString() %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
