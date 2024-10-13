@@ -93,7 +93,16 @@ To run this project, you will need to add the following environment variables to
 `MYSQL_DATABASE = 'your_dbname_here'`
 
 `PORT = your_portNum_here`
+## Screenshots
 
+  ### Home Screen
+   ![home screen](screenshots/{C67CE3FB-D11B-4DB2-8296-D0256DA156BE}.png)
+  ### Customer Page
+   ![Customer Tour Packages](screenshots/{84631EFF-AEB3-4248-BFD8-77D115996FC8}.png)
+   ![Book Tour Package](screenshots/{5471CD81-0F7E-44C3-9FCD-69C44E6E5D6C}.png)
+  ### Admin Page
+  ![Add Tour Packages](screenshots/{03E37B47-4B79-41F1-AABB-B7D62FF4911F}.png)
+   ![Manage Tour Packages](screenshots/{57E2DA55-C4EB-4F95-BDA8-D6F3CC8B777A}.png)
 
 ## Authors
 
