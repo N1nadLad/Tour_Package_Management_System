@@ -1,7 +1,7 @@
 
 # Tour Package Management System
 
-This project is a **Tour Package Management System** built using **https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip**, **Express**, **Ejs** and **MySQL**. It allows customers to browse and book tour packages, while administrators can manage packages, view customer bookings, and update/delete packages.
+This project is a **Tour Package Management System** built using **Node.js**, **Express**, **Ejs** and **MySQL**. It allows customers to browse and book tour packages, while administrators can manage packages, view customer bookings, and update/delete packages.
 
 ## Features
 
@@ -18,13 +18,13 @@ This project is a **Tour Package Management System** built using **https://raw.g
 ## Installation
 
 ### Prerequisites
-- https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip and npm installed
+- Node.js and npm installed
 - MySQL installed
 - Git (for version control)
 ## Tech Stack
 
 - Frontend: HTML, CSS, JavaScript
-- Backend: https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip, Express
+- Backend: Node.js, Express
 - Database: MySQL
 - View Engine: EJS (Embedded JavaScript)
 - Other: dotenv for environment variables
@@ -35,7 +35,7 @@ This project is a **Tour Package Management System** built using **https://raw.g
 Clone the project
 
 ```bash
-  git clone https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip
+  git clone https://github.com/N1nadLad/Tour_Package_Management_System
 ```
 
 Go to the project directory
@@ -53,7 +53,7 @@ Install dependencies
 Start the server
 
 ```bash
-  node https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip
+  node app.js
 ```
 
 
@@ -77,8 +77,8 @@ Start the server
 
  - Bookings:
     - booking_id (Primary Key)
-    - customer_id (Foreign Key references https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
-    - package_id (Foreign Key references https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
+    - customer_id (Foreign Key references Customers.customer_id)
+    - package_id (Foreign Key references TourPackages.package_id)
     - booking_date
 ## Environment Variables
 
@@ -106,5 +106,4 @@ To run this project, you will need to add the following environment variables to
 
 ## Authors
 
-- [@N1nadLad](https://raw.githubusercontent.com/MudassirQureshi7987/Tour_Package_Management_System/main/src/views/Package-System-Tour-Management-1.0.zip)
-
+- [@N1nadLad](https://github.com/N1nadLad)
